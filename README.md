@@ -3,7 +3,7 @@
 <br>정시형, 한양인터칼리지학부(서울), non2021115@hanyang.ac.kr
 <br>하준호, 한양인터칼리지학부(서울), haho0802@hanyang.ac.kr
 
-<br>I. Proposal
+<br><span style="font-size: 20px;"> I. Proposal</span>
 <br>Motivation
 <br>본 프로젝트는 일별 기상 데이터가 자전거 대여 수요에 미치는 영향을 정량적으로 분석하고, 이를 기반으로 일일 대여량을 예측하는 모델을 구축하는 것을 목적으로 한다.
 UCI Bike Sharing Dataset의 day.csv는 온도, 체감온도, 습도, 풍속 등 기상 요인과 실제 대여량이 함께 기록되어 있어 기계학습 회귀 모델의 적용 가능성을 평가하기에 적합한 구조를 갖고 있다.
