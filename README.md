@@ -10,7 +10,7 @@
 <br>[V. Related Work](#section5)
 <br>[VI. Conclusion](#section6)
 
-<br>#I. Proposal<a id="section1"></a>
+#I. Proposal<a id="section1"></a>
 <br><Motivation
 <br>본 프로젝트는 일별 기상 데이터가 자전거 대여 수요에 미치는 영향을 정량적으로 분석하고, 이를 기반으로 일일 대여량을 예측하는 모델을 구축하는 것을 목적으로 한다.
 UCI Bike Sharing Dataset의 day.csv는 온도, 체감온도, 습도, 풍속 등 기상 요인과 실제 대여량이 함께 기록되어 있어 기계학습 회귀 모델의 적용 가능성을 평가하기에 적합한 구조를 갖고 있다.
