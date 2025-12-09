@@ -19,12 +19,42 @@ UCI Bike Sharing Dataset의 day.csv는 온도, 체감온도, 습도, 풍속 등 
 
 <br>II. Datasets
 <br>본 분석은 UCI Machine Learning Repository에서 제공하는 Bike Sharing Dataset 중 “day.csv” 파일을 사용하였다.
-해당 데이터는 2011–2012년 기간의 일별 관측치(총 731개)로 구성되며, 기상 조건과 대여량이 함께 기록되어 있다.
+<br>
+```python
+data_path = "day.csv" #파일 디렉토리
+bike_data = pd.read_csv(data_path) #파일 저장
+# Basic EDA: preview data, summary statistics, and correlations
+print("First 5 rows of the dataset:")
+print(bike_data.head())
+
+print("\nBasic statistics:")
+print(bike_data.describe())
+
+print("\nCorrelation matrix:")
+print(bike_data.corr(numeric_only=True))
+```
+<br> 데이터 로딩과 데이터 미리보기
+
+```python
+# Split the data into training and testing sets (80:20 split)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+```
+<br> 학습 데이터와 테스트 데이터 분류
+
+<br>해당 데이터는 2011–2012년 기간의 일별 관측치(총 731개)로 구성되며, 기상 조건과 대여량이 함께 기록되어 있다.
 본 연구에서는 모델 입력 변수로 다음 네 가지 기상 요인을 채택하였다:
 <br>temp: 정규화된 온도
 <br>atemp: 정규화된 체감온도
 <br>hum: 상대습도
 <br>windspeed: 풍속
+```python
+feature_columns = ["temp", "atemp", "hum", "windspeed"]
+target_column = "cnt"
+X = bike_data[feature_columns]
+y = bike_data[target_column]
+```
 <br>종속변수는 cnt(하루 총 대여량)으로 설정하였다.
 <br>이 네 변수는 실제 이용자의 활동성과 날씨 민감도를 반영하는 요인으로, 예측 모델의 입력 피처로 타당하다.
 
