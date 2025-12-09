@@ -1,4 +1,4 @@
-# 기상 데이터 기반의 자전거 수요 예측
+## 기상 데이터 기반의 자전거 수요 예측
 이서현, 한양인터칼리지학부(서울), jiyeahna19@hanyang.ac.kr
 <br>정시형, 한양인터칼리지학부(서울), non2021115@hanyang.ac.kr
 <br>하준호, 한양인터칼리지학부(서울), haho0802@hanyang.ac.kr
@@ -10,7 +10,7 @@
 <br>[V. Related Work](#section5)
 <br>[VI. Conclusion](#section6)
 
-<br>I. Proposal<a id="section1"></a>
+<br>#I. Proposal<a id="section1"></a>
 <br><Motivation
 <br>본 프로젝트는 일별 기상 데이터가 자전거 대여 수요에 미치는 영향을 정량적으로 분석하고, 이를 기반으로 일일 대여량을 예측하는 모델을 구축하는 것을 목적으로 한다.
 UCI Bike Sharing Dataset의 day.csv는 온도, 체감온도, 습도, 풍속 등 기상 요인과 실제 대여량이 함께 기록되어 있어 기계학습 회귀 모델의 적용 가능성을 평가하기에 적합한 구조를 갖고 있다.
@@ -24,7 +24,7 @@ UCI Bike Sharing Dataset의 day.csv는 온도, 체감온도, 습도, 풍속 등 
 <br>-Feature Importance 분석을 통한 주요 영향 요인 규명
 <br>-시각화 기반의 해석 제공 (온도-대여량, 실제값-예측값)
 
-<br>II. Datasets <a id="section2"></a>
+<br>#II. Datasets <a id="section2"></a>
 <br>본 분석은 UCI Machine Learning Repository에서 제공하는 Bike Sharing Dataset 중 “day.csv” 파일을 사용하였다.
 <br>
 ```python
