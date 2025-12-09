@@ -1,4 +1,4 @@
-<span style="font-size: 20px;">기상 데이터 기반의 자전거 수요 예측 </span>
+# 기상 데이터 기반의 자전거 수요 예측
 이서현, 한양인터칼리지학부(서울), jiyeahna19@hanyang.ac.kr
 <br>정시형, 한양인터칼리지학부(서울), non2021115@hanyang.ac.kr
 <br>하준호, 한양인터칼리지학부(서울), haho0802@hanyang.ac.kr
