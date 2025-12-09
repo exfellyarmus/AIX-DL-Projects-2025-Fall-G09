@@ -143,7 +143,7 @@ plt.show()
 <br>R² = 0.4499는 모델이 기상 변수만으로 전체 수요 변동성의 약 45%를 설명함을 의미한다.
 이는 자전거 이용량이 날씨 외에도 요일, 사회적 패턴, 이벤트 등 다양한 요인에 의해 영향을 받는다는 점을 반영하며, 기상 변수 중심 모델로서는 타당한 수준의 설명력을 제공한다.
 
-<br>Scatter Plots
+<br>**Scatter Plots**
 <br>(a) Temperature vs Bike Count
 <br><img width="517" height="470" alt="image" src="https://github.com/user-attachments/assets/d88dc4a1-26c4-4ae3-ae97-00b3546dc5b4" />
 <br>온도 상승과 대여량 증가 간의 일관된 양의 관계가 관찰되었다.
@@ -156,7 +156,7 @@ plt.show()
 
 
 
-<br>Feature Importance
+<br>**Feature Importance**
 <br>RandomForestRegressor가 산출한 변수 중요도는 다음과 같다:
 <br>temp: 0.4284
 <br>atemp: 0.2441
