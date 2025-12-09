@@ -145,14 +145,14 @@ plt.show()
 
 <br>Scatter Plots
 <br>(a) Temperature vs Bike Count
+<br><img width="517" height="470" alt="image" src="https://github.com/user-attachments/assets/d88dc4a1-26c4-4ae3-ae97-00b3546dc5b4" />
 <br>온도 상승과 대여량 증가 간의 일관된 양의 관계가 관찰되었다.
-이는 온도가 자전거 이용 활동성의 핵심 결정 요인임을 시각적으로 확인시키는 결과이다.
-<img width="517" height="470" alt="image" src="https://github.com/user-attachments/assets/d88dc4a1-26c4-4ae3-ae97-00b3546dc5b4" />
+<br>이는 온도가 자전거 이용 활동성의 핵심 결정 요인임을 시각적으로 확인시키는 결과이다.
 
 <br>(b) Actual vs Predicted Bike Counts
+<br><img width="348" height="470" alt="image" src="https://github.com/user-attachments/assets/d6adfdea-960f-42cd-86f0-08e833973ec3" />
 <br>실제값과 예측값은 대체로 y=x 이상적인 예측선 주변에 분포하며, 모델이 수요 패턴을 일정 수준으로 재현하고 있음을 보여준다.
-특정 구간에서 예측 편차가 발생하나 이는 입력 피처가 네 가지 기상 요인으로 제한되어 있다는 점에서 구조적으로 자연스러운 결과이다.
-<img width="348" height="470" alt="image" src="https://github.com/user-attachments/assets/d6adfdea-960f-42cd-86f0-08e833973ec3" />
+<br>특정 구간에서 예측 편차가 발생하나 이는 입력 피처가 네 가지 기상 요인으로 제한되어 있다는 점에서 구조적으로 자연스러운 결과이다.
 
 
 
