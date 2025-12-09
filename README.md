@@ -35,14 +35,6 @@ print(bike_data.corr(numeric_only=True))
 ```
 <br> 데이터 로딩과 데이터 미리보기
 
-```python
-# Split the data into training and testing sets (80:20 split)
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
-```
-<br> 학습 데이터와 테스트 데이터 분류
-
 <br>해당 데이터는 2011–2012년 기간의 일별 관측치(총 731개)로 구성되며, 기상 조건과 대여량이 함께 기록되어 있다.
 본 연구에서는 모델 입력 변수로 다음 네 가지 기상 요인을 채택하였다:
 <br>temp: 정규화된 온도
@@ -71,13 +63,74 @@ EDA 결과, temp–cnt, atemp–cnt는 높은 양의 상관관계를 보였고, 
 <br>Model Parameters
 <br>분석의 안정성을 강화하기 위해 n_estimators=200을 사용하여 트리 개수를 기본값(100)보다 증가시켰다.
 이는 개별 트리의 변동성을 평균화하여 보다 일관된 회귀 성능을 얻기 위한 설정이다.
+```python
+model = RandomForestRegressor(n_estimators=200, random_state=42)
+```
+<br> RandomForestRegressor 모델 정의
 
 <br>Train–Test Split
 <br>전체 데이터를 80:20 비율로 훈련·테스트 세트로 분리하였고, random_state=42를 사용하여 재현성을 확보하였다.
+```python
+# Split the data into training and testing sets (80:20 split)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+```
+<br> 학습 데이터와 테스트 데이터 분류
 
 <br>IV. Evaluation and Analysis
 <br>Model Performance
 <br>모델 학습 후, 테스트 세트에 대해 다음 평가 지표를 산출하였다.
+```python
+model.fit(X_train, y_train)
+
+# Predict on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model using MAE and R^2 score
+mae = mean_absolute_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print(f"\nMean Absolute Error (MAE): {mae:.2f}")
+print(f"R^2 Score: {r2:.4f}")
+
+# Display feature importances
+feature_importances = pd.Series(
+    model.feature_importances_, index=feature_columns
+).sort_values(ascending=False)
+
+print("\nFeature Importances:")
+for feature, importance in feature_importances.items():
+    print(f"{feature}: {importance:.4f}")
+
+# Plot temperature vs. total bike count
+plt.figure(figsize=(12, 5))
+plt.subplot(1, 2, 1)
+plt.scatter(bike_data["temp"], bike_data["cnt"], alpha=0.6)
+plt.title("Temperature vs Bike Count")
+plt.xlabel("Normalized Temperature")
+plt.ylabel("Total Bike Count")
+
+# Plot actual vs. predicted counts with reference line
+plt.subplot(1, 2, 2)
+plt.scatter(y_test, y_pred, alpha=0.6, label="Predictions")
+plt.title("Actual vs Predicted Bike Counts")
+plt.xlabel("Actual Counts")
+plt.ylabel("Predicted Counts")
+diagonal_start = min(y_test.min(), y_pred.min())
+diagonal_end = max(y_test.max(), y_pred.max())
+plt.plot(
+    [diagonal_start, diagonal_end],
+    [diagonal_start, diagonal_end],
+    color="red",
+    linestyle="--",
+    label="Ideal Fit",
+)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+```
 <br>Mean Absolute Error (MAE): 1210.97
 <br>R² Score: 0.4499
 <br>R² = 0.4499는 모델이 기상 변수만으로 전체 수요 변동성의 약 45%를 설명함을 의미한다.
