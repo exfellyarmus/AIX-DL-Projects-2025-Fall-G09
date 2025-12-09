@@ -16,7 +16,7 @@
 UCI Bike Sharing Dataset의 day.csv는 온도, 체감온도, 습도, 풍속 등 기상 요인과 실제 대여량이 함께 기록되어 있어 기계학습 회귀 모델의 적용 가능성을 평가하기에 적합한 구조를 갖고 있다.
 따라서 본 연구는 기상 기반 예측 모델이 도심형 자전거 서비스 수요 변동을 어느 정도 설명할 수 있는지 분석적 근거를 제공하고자 한다.
 
-<br>What do you want to see at the end?
+<br>**What do you want to see at the end?**
 <br>본 프로젝트는 다음의 결과물을 목표로 한다:
 <br>-기상 변수와 대여량 간의 통계적·시각적 관계 분석
 <br>-RandomForestRegressor 기반 예측 모델 구현
