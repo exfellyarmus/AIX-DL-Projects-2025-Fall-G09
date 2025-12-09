@@ -18,11 +18,11 @@ UCI Bike Sharing Dataset의 day.csv는 온도, 체감온도, 습도, 풍속 등 
 
 <br>**What do you want to see at the end?**
 <br>본 프로젝트는 다음의 결과물을 목표로 한다:
-<br>-기상 변수와 대여량 간의 통계적·시각적 관계 분석
-<br>-RandomForestRegressor 기반 예측 모델 구현
-<br>-예측 성능(MAE, R²)의 정량적 평가
-<br>-Feature Importance 분석을 통한 주요 영향 요인 규명
-<br>-시각화 기반의 해석 제공 (온도-대여량, 실제값-예측값)
+<br>- 기상 변수와 대여량 간의 통계적·시각적 관계 분석
+<br>- RandomForestRegressor 기반 예측 모델 구현
+<br>- 예측 성능(MAE, R²)의 정량적 평가
+<br>- Feature Importance 분석을 통한 주요 영향 요인 규명
+<br>- 시각화 기반의 해석 제공 (온도-대여량, 실제값-예측값)
 
 ## II. Datasets <a id="section2"></a>
 <br>본 분석은 UCI Machine Learning Repository에서 제공하는 Bike Sharing Dataset 중 “day.csv” 파일을 사용하였다.
@@ -58,16 +58,16 @@ y = bike_data[target_column]
 <br>이 네 변수는 실제 이용자의 활동성과 날씨 민감도를 반영하는 요인으로, 예측 모델의 입력 피처로 타당하다.
 
 ## III. Methodology <a id="section3"></a>
-<br>Exploratory Data Analysis (EDA)
+<br>**Exploratory Data Analysis (EDA)**
 <br>데이터의 기초 통계, 상위 5개 행, 그리고 사용 변수(temp, atemp, hum, windspeed, cnt) 중심으로 상관행렬을 확인하였다.
 EDA 결과, temp–cnt, atemp–cnt는 높은 양의 상관관계를 보였고, hum–cnt, windspeed–cnt는 비교적 낮거나 약한 음의 상관관계를 보였다.
 이는 기상 요인이 자전거 이용 패턴에 의미 있게 작용함을 시사한다.
 
-<br>Model Selection: RandomForestRegressor
+<br>**Model Selection: RandomForestRegressor**
 <br>본 프로젝트는 RandomForestRegressor를 사용하여 예측 모델을 구성하였다.
 랜덤포레스트는 비선형 관계 탐지, 다중 트리 결합을 통한 높은 안정성, 변수 중요도 산출 가능성 등의 장점으로 인해 본 연구 목적에 적합하다.
 
-<br>Model Parameters
+<br>**Model Parameters**
 <br>분석의 안정성을 강화하기 위해 n_estimators=200을 사용하여 트리 개수를 기본값(100)보다 증가시켰다.
 이는 개별 트리의 변동성을 평균화하여 보다 일관된 회귀 성능을 얻기 위한 설정이다.
 ```python
@@ -86,7 +86,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 <br> 학습 데이터와 테스트 데이터 분류
 
 ## IV. Evaluation and Analysis <a id="section4"></a>
-<br>Model Performance
+<br>**Model Performance**
 <br>모델 학습 후, 테스트 세트에 대해 다음 평가 지표를 산출하였다.
 ```python
 model.fit(X_train, y_train)
