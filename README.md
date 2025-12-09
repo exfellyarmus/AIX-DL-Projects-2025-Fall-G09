@@ -10,9 +10,6 @@
 <br>[V. Related Work](#section5)
 <br>[VI. Conclusion](#section6)
 
-<br>
-<br>
-<br>
 ## I. Proposal<a id="section1"></a>
 <br><Motivation
 <br>본 프로젝트는 일별 기상 데이터가 자전거 대여 수요에 미치는 영향을 정량적으로 분석하고, 이를 기반으로 일일 대여량을 예측하는 모델을 구축하는 것을 목적으로 한다.
@@ -60,7 +57,7 @@ y = bike_data[target_column]
 <br>종속변수는 cnt(하루 총 대여량)으로 설정하였다.
 <br>이 네 변수는 실제 이용자의 활동성과 날씨 민감도를 반영하는 요인으로, 예측 모델의 입력 피처로 타당하다.
 
-<br>III. Methodology <a id="section3"></a>
+## III. Methodology <a id="section3"></a>
 <br>Exploratory Data Analysis (EDA)
 <br>데이터의 기초 통계, 상위 5개 행, 그리고 사용 변수(temp, atemp, hum, windspeed, cnt) 중심으로 상관행렬을 확인하였다.
 EDA 결과, temp–cnt, atemp–cnt는 높은 양의 상관관계를 보였고, hum–cnt, windspeed–cnt는 비교적 낮거나 약한 음의 상관관계를 보였다.
@@ -88,7 +85,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 ```
 <br> 학습 데이터와 테스트 데이터 분류
 
-<br>IV. Evaluation and Analysis <a id="section4"></a>
+## IV. Evaluation and Analysis <a id="section4"></a>
 <br>Model Performance
 <br>모델 학습 후, 테스트 세트에 대해 다음 평가 지표를 산출하였다.
 ```python
@@ -170,14 +167,14 @@ plt.show()
 이 두 변수의 높은 중요도는 온도 변화가 자전거 대여량 예측에서 핵심적 역할을 한다는 점을 재확인한다.
 습도와 풍속은 보조적 영향 요인으로 해석할 수 있다.
 
-<br>V. Related Work <a id="section5"></a>
+## V. Related Work <a id="section5"></a>
 <br>본 프로젝트는 다음 자료를 기반으로 분석을 수행하였다:
 <br>UCI Machine Learning Repository: Bike Sharing Dataset 문서
 <br>Scikit-learn Documentation: RandomForestRegressor, train_test_split, 평가 지표
 <br>Pandas Documentation: 데이터 처리 및 기술 통계
 <br>Matplotlib Tutorials: 시각화 방법
 
-<br>VI. Conclusion <a id="section6"></a>
+## VI. Conclusion <a id="section6"></a>
 <br>본 프로젝트는 기상 데이터를 활용하여 일별 자전거 대여량을 예측하는 회귀 모델을 구축하고, 그 성능과 해석 결과를 체계적으로 검증하였다.
 온도 변수의 지배적 영향력, 습도·풍속의 제한적 역할, 실제값-예측값 비교 결과 등을 종합적으로 고려할 때, 기상 요인 중심의 예측 모델은 수요 패턴의 상당 부분을 설명할 수 있음을 확인하였다.
 본 분석은 도시형 공유 자전거 서비스의 운영 정책, 수요 예측, 기상 기반 리소스 배분 전략을 구축하는 데 참고 자료로 활용될 수 있다.
